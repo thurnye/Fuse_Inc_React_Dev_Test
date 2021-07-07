@@ -3,16 +3,16 @@ import {createSlice} from '@reduxjs/toolkit'
 // initialize the state
 
 const initialState = {
-    crypto: []
+    cryptoData: {}
 }
 
 const cryptoSlice = createSlice({
-    name: 'coinData',
+    name: 'cyptos',
     initialState: initialState,
     reducers: {
         addCryptos(state, action){
-            // console.log(action.payload.cryptoCoins)
-            state.crypto = action.payload.cryptoCoins
+            state.cryptoData = action.payload.cryptoCoins
+            // console.log(state.cryptoData)
         }
     }
 })

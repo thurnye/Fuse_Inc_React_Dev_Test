@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {useSelector} from 'react-redux'
+import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import Avatar from '@material-ui/core/Avatar';
@@ -22,48 +23,48 @@ const useStyles = makeStyles({
 
 export default function MediaCard() {
 
-
+  const cryptoCoins = useSelector(state => state.cryptos.cryptoData.data)
+  console.log(cryptoCoins)
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
-        // action={
-        //   <IconButton aria-label="settings">
-        //   </IconButton>
-        // }
-        title="Name of Coin"
-        subheader="September 14, 2016"
-      />
-      <CardActionArea>
-        {/* <CardMedia
-          className={classes.media}
-          image="/static/images/cards/contemplative-reptile.jpg"
-          title="Contemplative Reptile"
-        /> */}
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            Metric Info
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
-    </Card>
+    <>
+    {!cryptoCoins && (<h1>Loading...</h1>)}
+      {cryptoCoins && (cryptoCoins.coins.map(el => {
+       
+        return(
+          
+          <Grid item xs={6} sm={3} key={el.id}>
+        <Card className={classes.root} >
+        <CardHeader
+          avatar={
+            <Avatar aria-label="recipe" className={classes.avatar} style={{backgroundColor: 'white'}}>
+              <img src={el.iconUrl} alt={el.symbol} style={{width: `40px`, height: '40px'}}/>
+            </Avatar>
+          }
+          title={el.name}
+          
+          subheader={el.slug}
+        />
+        <CardActionArea>
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              Metric Info
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p" noWrap>
+              {el.description}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
+      </Card>
+        </Grid>
+        )
+      }))}
+    </>
   );
 }
