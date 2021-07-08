@@ -40,3 +40,25 @@ nav a:hover{
     /* border: 2px solid red; */
     height: 150px;
 }
+
+.pageNumbers{
+    width: -webkit-fill-available;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #06063a;
+    margin-bottom: 5px;
+    height: 40px;
+}
+.pageNumbers li{
+    list-style: none;;
+    color: white;
+    padding: 5px;
+    cursor: pointer
+}
+.pageNumbers li:hover{
+    border-bottom: 2px solid whitesmoke;
+}
+ .active{
+    border-bottom: 2px solid whitesmoke;
+}
