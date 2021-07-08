@@ -1,4 +1,4 @@
-import React from 'react';
+import {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {useSelector} from 'react-redux'
 import {Link} from "react-router-dom";
@@ -22,19 +22,57 @@ const useStyles = makeStyles({
   },
 });
 
- function MediaCard() {
+function MediaCard() {
 
   const cryptoCoins = useSelector(state => state.cryptos.cryptoData.data)
   console.log(cryptoCoins)
   const classes = useStyles();
   
+  const [currentPage, setCurrentPage] = useState(1)
+  const [itemsPerPage, setItemsPerPage] = useState(8)
+
+
+
+  const handlePageNumber = (e) => {
+    e.preventDefault()
+    console.log(e.target.id)
+    setCurrentPage(e.target.id)
+  }
+
+  const pages = []
+  let pageNumber,
+      currentItem
+
+  if(cryptoCoins !== undefined){
+    for(let i = 1; i <= Math.ceil(cryptoCoins.coins.length/itemsPerPage); i++){
+      pages.push(i)
+    }
+  
+
+   pageNumber = pages.map(num => <li 
+                                    key={num} 
+                                    id={num} 
+                                    onClick={(e) => handlePageNumber(e)}
+                                    className={currentPage == num ? 'active': null}
+                                    
+                                    > {num} </li>)
+
+  const indexOfLastItem = currentPage*itemsPerPage
+
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage
+
+  currentItem = cryptoCoins.coins.slice(indexOfFirstItem, indexOfLastItem)
+ 
+  }
 
 
   return (
     <>
+    
     {!cryptoCoins && (<h1>Loading...</h1>)}
-      {cryptoCoins && (cryptoCoins.coins.map(el => {
+      {cryptoCoins && (currentItem.map(el => {
 
+        // displaying the graph
        const graphData = {
         labels: [...Array(el.history.length).keys()],
         datasets: [
@@ -76,12 +114,8 @@ const useStyles = makeStyles({
             </Avatar>
             
           }
-
           title={el.name}
-          
           subheader={el.slug}
-
-          
         />
         
         <CardActionArea>
@@ -146,6 +180,10 @@ const useStyles = makeStyles({
         </Grid>
         )
       }))}
+
+<ul className="pageNumbers">
+    {pageNumber}
+    </ul>
     </>
   );
 }
