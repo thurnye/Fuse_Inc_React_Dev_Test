@@ -1,0 +1,28 @@
+.coinInfo{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+.price {
+    font-size: 15px;
+    color: #756e6e;
+}
+.data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.coin-data{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* margin: 10px; */
+    font-size: 15px;
+    color: #756e6e;
+    /* text-align: center; */
+} 
+.history{
+    border: 2px solid red;
+    height: 150px;
+}

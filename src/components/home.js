@@ -6,7 +6,6 @@ import Coins from './coinLists'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    border: '2px dotted red',
   }
 }));
 
