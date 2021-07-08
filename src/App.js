@@ -1,8 +1,10 @@
 import axios from 'axios'
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './App.css';
 import Home from './components/home'
+import Coin from './components/singleCrypto'
 import {cryptoActions} from './store/cryptoSlice'
 
 
@@ -38,10 +40,16 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Home/>
-
-    </div>
+    <>
+    <Router>
+      <Switch>
+        <Route path="/"  exact>
+          <Home/>
+        </Route>
+        <Route path="/currency/"  component={Coin} />
+      </Switch>
+    </Router>
+  </>
   );
 }
 
