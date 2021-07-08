@@ -8,6 +8,7 @@
 | React Js     | 
 | React Hooks     | 
 | Redux     | 
+| react-chartjs-2 chart.js     | 
 
 *  [Coin Ranking Database API](https://coinranking1.p.rapidapi.com/)- To populate my database
 ---

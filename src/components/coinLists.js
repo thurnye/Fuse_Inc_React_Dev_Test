@@ -10,9 +10,8 @@ import Avatar from '@material-ui/core/Avatar';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
+import {Line} from 'react-chartjs-2';
 
 const useStyles = makeStyles({
   root: {
@@ -28,14 +27,43 @@ const useStyles = makeStyles({
   const cryptoCoins = useSelector(state => state.cryptos.cryptoData.data)
   console.log(cryptoCoins)
   const classes = useStyles();
-
+  
 
 
   return (
     <>
     {!cryptoCoins && (<h1>Loading...</h1>)}
       {cryptoCoins && (cryptoCoins.coins.map(el => {
-       
+
+       const graphData = {
+        labels: [...Array(el.history.length).keys()],
+        datasets: [
+          {
+            label: `${el.name} Coin Chart`,
+            responsive: true,
+            fill: false,
+            lineTension: 0.5,
+            backgroundColor: el.color,
+            pointRadius: 0,
+            pointBorderColor: el.color,
+            padding: 0,
+            borderWidth: 2,
+            data: el.history,
+            scales: {
+              xAxis: [{
+                 gridLines: {
+                    display: false
+                 }
+              }],
+              yAxis: [{
+                 gridLines: {
+                    display: false
+                 }
+              }]
+         }
+          }
+        ]
+      }
        
         return(
           
@@ -90,7 +118,20 @@ const useStyles = makeStyles({
                 </p>
               </div>
               <section className="history">
-                
+                  <Line
+              data={graphData}
+              options={{
+                title:{
+                  display:true,
+                  text:'Average Rainfall per month',
+                  fontSize:20
+                },
+                legend:{
+                  display:true,
+                  position:'right'
+                }
+              }}
+            />
               </section>
             </Typography>
           </CardContent>
@@ -98,7 +139,6 @@ const useStyles = makeStyles({
         <CardActions>
           <Link to={{
               pathname: `/currency/${el.name}`,
-              search: `?${el.name}`,
               state: {coinId: el.id}
             }} size="small" color="primary">Learn More</Link>
         </CardActions>

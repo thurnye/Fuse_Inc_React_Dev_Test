@@ -6,6 +6,7 @@ import './App.css';
 import Home from './components/home'
 import Coin from './components/singleCrypto'
 import {cryptoActions} from './store/cryptoSlice'
+import Nav from './components/nav'
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
   return (
     <>
     <Router>
+      <Nav/>
       <Switch>
         <Route path="/"  exact>
           <Home/>
