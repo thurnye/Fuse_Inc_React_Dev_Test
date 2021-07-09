@@ -12,6 +12,35 @@ nav a{
 nav a:hover{
     color: #c3c3c3;
 }
+
+
+.sub-nav{
+    height: 15px;
+    display: flex;
+    align-items: center;
+    margin: 1px 5px 2px 5px;
+}
+.stats {
+    display: flex;
+    font-size: 12px;
+    width: -webkit-fill-available;
+    justify-content: space-between;
+}
+.stat-data{
+    color: #0000ee
+}
+.sign{
+    border: 1px solid rgb(212, 212, 212);
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    margin-right: 3px;
+    background-color: #13c783;
+    color: white
+}
+
 .coinInfo{
     display: flex;
     justify-content: space-between;
