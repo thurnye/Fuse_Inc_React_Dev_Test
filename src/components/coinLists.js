@@ -30,7 +30,7 @@ function MediaCard() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(8)
 
-
+  console.log(cryptoCoins)
 
   // change the CurrentPage
   const handlePageNumber = (e) => {
@@ -54,7 +54,7 @@ function MediaCard() {
                                     key={num} 
                                     id={num} 
                                     onClick={(e) => handlePageNumber(e)}
-                                    className={currentPage === num ? 'active': null}
+                                    className={parseInt(currentPage) === parseInt(num) ? 'active': null}
                                     > {num} </li>)
 
   // get the number of items in the page
@@ -122,13 +122,13 @@ function MediaCard() {
               <CardContent>
                 <Typography gutterBottom variant="h5" component="div">
                   <div className="coinInfo">
-                    <p>Coin Info</p>
                     <p className="price" sm={6}>
-                      <span>Price : </span> <span>{(Number(el.price)).toLocaleString('en-US', {
+                      <span>Price</span> <span>{(Number(el.price)).toLocaleString('en-US', {
                         style: 'currency',
                         currency: cryptoCoins.base.symbol,
                       })}</span>
                     </p>
+                    <p className={el.change > 0 ? "data-increase increase" : "data-decrease decrease"}><small>{el.change}%</small></p>
                   </div>
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="div" >
