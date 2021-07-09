@@ -45,9 +45,7 @@ function App() {
     <Router>
       <Header/>
       <Switch>
-        <Route path="/"  exact>
-          <Home/>
-        </Route>
+        <Route path="/"  exact component={Home}/>
         <Route path="/currency/"  component={Coin} />
       </Switch>
     </Router>
