@@ -2,7 +2,7 @@ import {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {useSelector} from 'react-redux'
 import {Link} from "react-router-dom";
-import { withRouter } from "react-router";
+// import { withRouter } from "react-router";
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -184,4 +184,4 @@ function MediaCard() {
   );
 }
 
-export default withRouter(MediaCard)
+export default MediaCard

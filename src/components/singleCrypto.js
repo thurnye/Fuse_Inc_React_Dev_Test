@@ -67,7 +67,7 @@ export default function SingleCrypto() {
 
 
   }
-  console.log(coin)
+  // console.log(coin)
   const handleClick = (e) => {
     // console.log(e.target.innerHTML.replace(/[><]['"]+[><]/g, ))
   }
