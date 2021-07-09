@@ -25,7 +25,6 @@ const useStyles = makeStyles({
 function MediaCard() {
 
   const cryptoCoins = useSelector(state => state.cryptos.cryptoData.data)
-  console.log(cryptoCoins)
   const classes = useStyles();
   
   const [currentPage, setCurrentPage] = useState(1)
@@ -33,12 +32,13 @@ function MediaCard() {
 
 
 
+  // change the CurrentPage
   const handlePageNumber = (e) => {
     e.preventDefault()
-    console.log(e.target.id)
     setCurrentPage(e.target.id)
   }
 
+  // get the total number of pages
   const pages = []
   let pageNumber,
       currentItem
@@ -49,20 +49,18 @@ function MediaCard() {
     }
   
 
+  // items to be displayed
    pageNumber = pages.map(num => <li 
                                     key={num} 
                                     id={num} 
                                     onClick={(e) => handlePageNumber(e)}
-                                    className={currentPage == num ? 'active': null}
-                                    
+                                    className={currentPage === num ? 'active': null}
                                     > {num} </li>)
 
+  // get the number of items in the page
   const indexOfLastItem = currentPage*itemsPerPage
-
   const indexOfFirstItem = indexOfLastItem - itemsPerPage
-
   currentItem = cryptoCoins.coins.slice(indexOfFirstItem, indexOfLastItem)
- 
   }
 
 
@@ -103,87 +101,85 @@ function MediaCard() {
         ]
       }
        
-        return(
+      return(
           
-          <Grid item xs={6} sm={3} key={el.id}>
-        <Card className={classes.root} >
-        <CardHeader
-          avatar={
-            <Avatar aria-label="recipe" className={classes.avatar} style={{backgroundColor: 'white'}}>
-              <img src={el.iconUrl} alt={el.symbol} style={{width: `40px`, height: '40px'}}/>
-            </Avatar>
-            
-          }
-          title={el.name}
-          subheader={el.slug}
-        />
-        
-        <CardActionArea>
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              <div className="coinInfo">
-                <p>Coin Info</p>
-                <p className="price" sm={6}>
-                  <span>Price : </span> <span>{(Number(el.price)).toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: cryptoCoins.base.symbol,
-                  })}</span>
-                </p>
-              </div>
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="div" >
-              {/* {el.description} */}
-              <div className="data">
-                
-                <p className="coin-data" sm={6}>
-                  <span>Market Cap</span> <span>{(el.marketCap).toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: cryptoCoins.base.symbol,
-                  })}</span>
-                </p>
-                <p className="coin-data" >
-                  <span>Volume <span>(24h)</span></span>  <span>{(el.volume).toLocaleString('en-US', {
-                    style: 'currency',
-                    currency: cryptoCoins.base.symbol,
-                  })}</span>
-                </p>
-                <p className="coin-data">
-                  <span>Circulating Supply</span> <span>{(Number(el.circulatingSupply)).toLocaleString('en-US')} {el.symbol}</span>
-                </p>
-              </div>
-              <section className="history">
-                  <Line
-              data={graphData}
-              options={{
-                title:{
-                  display:true,
-                  text:'Average Rainfall per month',
-                  fontSize:20
-                },
-                legend:{
-                  display:true,
-                  position:'right'
-                }
-              }}
+        <Grid item xs={6} sm={3} key={el.id}>
+          <Card className={classes.root} >
+            <CardHeader
+              avatar={
+                <Avatar aria-label="recipe" className={classes.avatar} style={{backgroundColor: 'white'}}>
+                  <img src={el.iconUrl} alt={el.symbol} style={{width: `40px`, height: '40px'}}/>
+                </Avatar>
+              }
+              title={<Link to={{
+                pathname: `/currency/${el.name}`,
+                state: {coinId: el.id}
+              }} size="small" color="#0000ee">{el.name}</Link>}
+              subheader={el.slug}
             />
-              </section>
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Link to={{
-              pathname: `/currency/${el.name}`,
-              state: {coinId: el.id}
-            }} size="small" color="primary">Learn More</Link>
-        </CardActions>
-      </Card>
+                
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <div className="coinInfo">
+                    <p>Coin Info</p>
+                    <p className="price" sm={6}>
+                      <span>Price : </span> <span>{(Number(el.price)).toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: cryptoCoins.base.symbol,
+                      })}</span>
+                    </p>
+                  </div>
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="div" >
+                  <div className="data">
+                    <p className="coin-data" sm={6}>
+                      <span>Market Cap</span> <span>{(el.marketCap).toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: cryptoCoins.base.symbol,
+                      })}</span>
+                    </p>
+                    <p className="coin-data" >
+                      <span>Volume <span>(24h)</span></span>  <span>{(el.volume).toLocaleString('en-US', {
+                        style: 'currency',
+                        currency: cryptoCoins.base.symbol,
+                      })}</span>
+                    </p>
+                    <p className="coin-data">
+                      <span>Circulating Supply</span> <span>{(Number(el.circulatingSupply)).toLocaleString('en-US')} {el.symbol}</span>
+                    </p>
+                  </div>
+                  <section className="history">
+                    <Line
+                      data={graphData}
+                      options={{
+                        title:{
+                          display:true,
+                          text:'Average Rainfall per month',
+                          fontSize:20
+                        },
+                        legend:{
+                          display:true,
+                          position:'right'
+                        }
+                      }}
+                    />
+                  </section>
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Link to={{
+                  pathname: `/currency/${el.name}`,
+                  state: {coinId: el.id}
+                }} size="small" color="primary">Learn More</Link>
+            </CardActions>
+          </Card>
         </Grid>
-        )
+      )
       }))}
+      {cryptoCoins &&  <ul className="pageNumbers">{pageNumber}</ul>}
 
-<ul className="pageNumbers">
-    {pageNumber}
-    </ul>
     </>
   );
 }

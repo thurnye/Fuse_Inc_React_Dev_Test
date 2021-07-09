@@ -3,6 +3,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Link} from "react-router-dom";
 import Typography from '@material-ui/core/Typography';
+import SubNav from './subNav'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -12,10 +13,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Links() {
+export default function Header() {
   const classes = useStyles();
 
   return (
+    <header>
+      <SubNav/>
       <nav>
         <Typography className={classes.root}>
         <Link to={{
@@ -24,5 +27,7 @@ export default function Links() {
         </Typography>
 
       </nav>
+    </header>
+      
   );
 }
