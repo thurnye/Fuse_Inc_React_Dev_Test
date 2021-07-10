@@ -40,7 +40,9 @@ nav a:hover{
     background-color: #13c783;
     color: white
 }
-
+.spinner{
+    margin: auto;
+}
 .coinInfo{
     display: flex;
     justify-content: space-between;

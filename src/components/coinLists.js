@@ -2,7 +2,6 @@ import {useState} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {useSelector} from 'react-redux'
 import {Link} from "react-router-dom";
-// import { withRouter } from "react-router";
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -30,7 +29,6 @@ function MediaCard() {
   const [currentPage, setCurrentPage] = useState(1)
   const [itemsPerPage, setItemsPerPage] = useState(8)
 
-  console.log(cryptoCoins)
 
   // change the CurrentPage
   const handlePageNumber = (e) => {
@@ -67,7 +65,7 @@ function MediaCard() {
   return (
     <>
     
-    {!cryptoCoins && (<h1>Loading...</h1>)}
+    {!cryptoCoins && (<div className="spinner"><h1>Loading...</h1></div>)}
       {cryptoCoins && (currentItem.map(el => {
 
         // displaying the graph
