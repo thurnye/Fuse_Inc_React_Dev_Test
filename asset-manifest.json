@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Your_Fuse_Inc_React_Dev_Test/static/css/main.fa06686c.chunk.css",
-    "main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.44abcfb7.chunk.js",
-    "main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.44abcfb7.chunk.js.map",
+    "main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.ae9bedfa.chunk.js",
+    "main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.ae9bedfa.chunk.js.map",
     "runtime-main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.e3df8994.js",
     "runtime-main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.e3df8994.js.map",
     "static/js/2.31093b8b.chunk.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.31093b8b.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e3df8994.js",
     "static/js/2.31093b8b.chunk.js",
     "static/css/main.fa06686c.chunk.css",
-    "static/js/main.44abcfb7.chunk.js"
+    "static/js/main.ae9bedfa.chunk.js"
   ]
 }
