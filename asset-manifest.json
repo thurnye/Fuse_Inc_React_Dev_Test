@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/css/main.fa06686c.chunk.css",
-    "main.js": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/main.44abcfb7.chunk.js",
-    "main.js.map": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/main.44abcfb7.chunk.js.map",
-    "runtime-main.js": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.d2c2ae4e.js",
-    "runtime-main.js.map": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.d2c2ae4e.js.map",
-    "static/js/2.31093b8b.chunk.js": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/2.31093b8b.chunk.js",
-    "static/js/2.31093b8b.chunk.js.map": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/2.31093b8b.chunk.js.map",
-    "static/js/3.1c756ae5.chunk.js": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/3.1c756ae5.chunk.js",
-    "static/js/3.1c756ae5.chunk.js.map": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/3.1c756ae5.chunk.js.map",
-    "index.html": "/thurnye/Your_Fuse_Inc_React_Dev_Test/index.html",
-    "static/css/main.fa06686c.chunk.css.map": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/css/main.fa06686c.chunk.css.map",
-    "static/js/2.31093b8b.chunk.js.LICENSE.txt": "/thurnye/Your_Fuse_Inc_React_Dev_Test/static/js/2.31093b8b.chunk.js.LICENSE.txt"
+    "main.css": "/Your_Fuse_Inc_React_Dev_Test/static/css/main.fa06686c.chunk.css",
+    "main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.44abcfb7.chunk.js",
+    "main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.44abcfb7.chunk.js.map",
+    "runtime-main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.e3df8994.js",
+    "runtime-main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.e3df8994.js.map",
+    "static/js/2.31093b8b.chunk.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.31093b8b.chunk.js",
+    "static/js/2.31093b8b.chunk.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.31093b8b.chunk.js.map",
+    "static/js/3.1c756ae5.chunk.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/3.1c756ae5.chunk.js",
+    "static/js/3.1c756ae5.chunk.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/3.1c756ae5.chunk.js.map",
+    "index.html": "/Your_Fuse_Inc_React_Dev_Test/index.html",
+    "static/css/main.fa06686c.chunk.css.map": "/Your_Fuse_Inc_React_Dev_Test/static/css/main.fa06686c.chunk.css.map",
+    "static/js/2.31093b8b.chunk.js.LICENSE.txt": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.31093b8b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2c2ae4e.js",
+    "static/js/runtime-main.e3df8994.js",
     "static/js/2.31093b8b.chunk.js",
     "static/css/main.fa06686c.chunk.css",
     "static/js/main.44abcfb7.chunk.js"
