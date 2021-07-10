@@ -61,16 +61,9 @@ export default function SingleCrypto() {
       ]
     }
     
-   
-
-// p.outerHTML = p.outerHTML.replace(/[><]['"]+[><]/g, '');
-
 
   }
-  // console.log(coin)
-  const handleClick = (e) => {
-    // console.log(e.target.innerHTML.replace(/[><]['"]+[><]/g, ))
-  }
+ 
  
 
   return (
@@ -96,18 +89,17 @@ export default function SingleCrypto() {
 
               <div >
                 <ul className="links">
-                 {coin.links.map(el => {
-                   return (
-                    <li key={el.name}>
-                    <a href={el.url} target="_blank" rel="noReferrer">{el.name}</a>
-                  </li>
-                   )
-                 })}
-                  
+                  {coin.links.map(el => {
+                    return (
+                      <li key={el.name}>
+                      <a href={el.url} target="_blank" rel="noReferrer">{el.name}</a>
+                    </li>
+                    )
+                  })}
                 </ul>
 
               </div>
-              </section>
+            </section>
           </Grid>
 
           <Grid item xs={7}>
@@ -169,11 +161,9 @@ export default function SingleCrypto() {
               </div>
             </div>
             </section>
-            
           </Grid>
           <section className="other-data" >
             <div className="coin-graph">
-              {/* {coin.description} */}
               <Line
                       data={graphData}
                       options={{
@@ -188,7 +178,6 @@ export default function SingleCrypto() {
                         }
                       }}
                     />
-
             </div>
             <div className="description">
             </div>

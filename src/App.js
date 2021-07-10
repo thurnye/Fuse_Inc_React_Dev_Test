@@ -1,31 +1,20 @@
 import axios from 'axios'
 import {useEffect} from 'react'
 import {useDispatch} from 'react-redux';
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import './App.css';
+import { BrowserRouter, Route, Switch} from 'react-router-dom'
+import services from './config/services'
+import {cryptoActions} from './store/cryptoSlice'
 import Home from './components/home'
 import Coin from './components/singleCrypto'
-import {cryptoActions} from './store/cryptoSlice'
 import Header from './components/header'
-
+import './App.css';
 
 function App() {
 
   const dispatch = useDispatch()
-
-
-  const options = {
-    method: 'GET',
-    param: 'coins',
-    url: 'https://coinranking1.p.rapidapi.com/coins',
-    headers: {
-      'x-rapidapi-key': '74a217fafcmsh976e97a31530a44p1f4bd1jsne0efc121be88',
-      'x-rapidapi-host': 'coinranking1.p.rapidapi.com'
-    }
-  };
   
   useEffect(() => {
-    axios.request(options).then(function (response) {
+    axios.request(services).then(function (response) {
       dispatch(cryptoActions.addCryptos({
         cryptoCoins: response.data
       }))
@@ -33,22 +22,18 @@ function App() {
     }).catch(function (error) {
       console.error(error);
     });
-    return () => {
-      
-    }
   })
   
 
-
   return (
     <>
-    <Router>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Header/>
       <Switch>
         <Route path="/"  exact component={Home}/>
         <Route path="/currency/"  component={Coin} />
       </Switch>
-    </Router>
+    </BrowserRouter>
   </>
   );
 }
