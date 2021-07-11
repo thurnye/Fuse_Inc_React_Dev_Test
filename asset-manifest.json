@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Your_Fuse_Inc_React_Dev_Test/static/css/main.82a6817a.chunk.css",
-    "main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.e25d0927.chunk.js",
-    "main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.e25d0927.chunk.js.map",
+    "main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.7946b4cb.chunk.js",
+    "main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/main.7946b4cb.chunk.js.map",
     "runtime-main.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.e3df8994.js",
     "runtime-main.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/runtime-main.e3df8994.js.map",
-    "static/js/2.aad07d65.chunk.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.aad07d65.chunk.js",
-    "static/js/2.aad07d65.chunk.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.aad07d65.chunk.js.map",
+    "static/js/2.63543c14.chunk.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.63543c14.chunk.js",
+    "static/js/2.63543c14.chunk.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.63543c14.chunk.js.map",
     "static/js/3.1c756ae5.chunk.js": "/Your_Fuse_Inc_React_Dev_Test/static/js/3.1c756ae5.chunk.js",
     "static/js/3.1c756ae5.chunk.js.map": "/Your_Fuse_Inc_React_Dev_Test/static/js/3.1c756ae5.chunk.js.map",
     "index.html": "/Your_Fuse_Inc_React_Dev_Test/index.html",
     "static/css/main.82a6817a.chunk.css.map": "/Your_Fuse_Inc_React_Dev_Test/static/css/main.82a6817a.chunk.css.map",
-    "static/js/2.aad07d65.chunk.js.LICENSE.txt": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.aad07d65.chunk.js.LICENSE.txt"
+    "static/js/2.63543c14.chunk.js.LICENSE.txt": "/Your_Fuse_Inc_React_Dev_Test/static/js/2.63543c14.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.e3df8994.js",
-    "static/js/2.aad07d65.chunk.js",
+    "static/js/2.63543c14.chunk.js",
     "static/css/main.82a6817a.chunk.css",
-    "static/js/main.e25d0927.chunk.js"
+    "static/js/main.7946b4cb.chunk.js"
   ]
 }
